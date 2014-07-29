@@ -1,2 +1,9 @@
 class Repositories extends Controller
-  constructor: () ->
+  constructor: (@$scope, @$rootScope, @githubService) ->
+    @$rootScope.$broadcast 'show_loader'
+    do @get_github_data
+
+  get_github_data: ->
+    @githubService.get_repos().success (response) =>
+      @$scope.repositories = response
+      @$rootScope.$broadcast 'hide_loader'

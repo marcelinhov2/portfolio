@@ -4,6 +4,6 @@ class Projects extends Controller
     do @get_facebook_data
       
   get_facebook_data: ->
-    @facebookPageService.get().success (response) =>
+    @facebookPageService.get_projects().success (response) =>
       @$scope.facebook_posts = response.data
       @$rootScope.$broadcast 'hide_loader'
