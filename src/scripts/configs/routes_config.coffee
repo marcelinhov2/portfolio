@@ -4,12 +4,15 @@ class Routes extends Config
       .when '/',
         controller: 'appController'
         templateUrl: '/partials/shareds/loader.html'
-      .when '/home',
-        controller: 'homeController'
-        templateUrl: '/partials/views/home.html'
-      .when '/internal',
-        controller: 'internalController'
-        templateUrl: '/partials/views/internal.html'
+      .when '/projects',
+        controller: 'projectsController'
+        templateUrl: '/partials/views/projects.html'
+      .when '/about',
+        controller: 'aboutController'
+        templateUrl: '/partials/views/about.html'
+      .when '/repositories',
+        controller: 'repositoriesController'
+        templateUrl: '/partials/views/repositories.html'
       .otherwise
         redirectTo: '/'
 
