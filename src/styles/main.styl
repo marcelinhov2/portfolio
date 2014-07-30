@@ -8,8 +8,41 @@ ng-view
   width 100%
   height 100%
 
+a
+  padding-bottom 5px
+  border-bottom 1px solid transparent
+  &:hover, &.active
+    color #5b007a !important
+    border-bottom 1px solid #5b007a
+
+.centralize
+  margin 0 auto
+
+#header
+  padding 20px 20px 10px
+  overflow hidden
+
+  .logo_small
+    float left
+    margin-left 10px
+
+  ul
+    float right
+    margin-right 10px
+    li
+      display inline-block
+      margin-left 20px
+      a
+        font-family 'Oswald', sans-serif
+        font-weight 300
+        letter-spacing 1px
+        font-size 16px
+        line-height 22px
+        color #a6c53c
+        text-decoration none
+
 #about
-  max-width 960px
+  max-width 1280px
   margin 0 auto
   text-align center
   h1
@@ -47,7 +80,7 @@ ng-view
           color grey
 
 #projects
-  max-width 960px
+  max-width 1280px
   margin 0 auto
   ul
     display block
@@ -68,6 +101,7 @@ ng-view
         background-repeat no-repeat
         background-size 300px 199px
         transition: background 1.5s ease-out;
+        border-bottom 0px
 
         .bg
           overfow hidden
@@ -135,8 +169,3 @@ ng-view
         color #a6c53c
         letter-spacing 1px
         text-decoration none
-        padding-bottom 5px
-        border-bottom 1px solid transparent
-
-        &:hover
-          border-bottom 1px solid #a6c53c
