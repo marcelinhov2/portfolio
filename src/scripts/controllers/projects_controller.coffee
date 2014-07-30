@@ -7,7 +7,7 @@ class Projects extends Controller
     @facebookPageService.get_projects().success (response) =>
       _.forEach response.data, (post) ->
         post.picture = post.picture.replace 'w=154', 'w=400'
-        post.picture = post.picture.replace 'h=154', 'h=400'
+        post.picture = post.picture.replace 'h=154', 'h=265'
 
       @$scope.facebook_posts = response.data
       @$rootScope.$broadcast 'hide_loader'
