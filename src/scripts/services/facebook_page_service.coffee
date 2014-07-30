@@ -11,6 +11,7 @@ class FacebookPage extends Service
     @$http(
       method: "GET"
       url: url
+      cache: true
     )
 
   get_projects: ->
@@ -20,6 +21,7 @@ class FacebookPage extends Service
     @$http(
       method: "GET"
       url: url
+      cache: true
     )
 
   rewrite_url: (url) ->
