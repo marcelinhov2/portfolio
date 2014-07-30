@@ -1,7 +1,7 @@
 class Routes extends Config
   constructor: ($routeProvider, $locationProvider) ->
       $routeProvider
-      .when '/about',
+      .when '/',
         controller: 'aboutController'
         templateUrl: '/partials/views/about.html'
       .when '/projects',
@@ -11,6 +11,6 @@ class Routes extends Config
         controller: 'repositoriesController'
         templateUrl: '/partials/views/repositories.html'
       .otherwise
-        redirectTo: '/about'
+        redirectTo: '/'
 
       $locationProvider.html5Mode true
