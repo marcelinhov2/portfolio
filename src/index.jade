@@ -9,7 +9,8 @@ html(lang="en")
   body(ng-app="app" ng-controller="appController")
     #wrap
       header-directive
-      ng-view(id="ng_view")
+      #content
+        ng-view(id="ng_view" class="at-view-flip-in-horizontal at-view-flip-out-horizontal")
       footer-directive
 
     // inject:js 
