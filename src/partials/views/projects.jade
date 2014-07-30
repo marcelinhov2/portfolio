@@ -2,5 +2,6 @@
   ul
     li(ng-repeat="post in facebook_posts")
       a(href="{{post.link}}" target="_blank")
+        img(src="{{post.picture}}")
         h2 {{post.name}}
         p {{post.message}}
