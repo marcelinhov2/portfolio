@@ -2,5 +2,5 @@
   ul
     li(ng-repeat="repository in repositories")
       a(href="http://github.com/{{repository.full_name}}" target="_blank")
-        h2 {{repository.name}}
+        h3 {{repository.name}}
         p {{repository.description}}

@@ -12,6 +12,7 @@ class App extends Controller
     @window = $(window)
     @content = @$element.find '#content'
     @view = @content.find '#ng_view'
+    @loader = @content.find '#loader'
 
   set_triggers: ->
     @window.resize @adjust_layout
@@ -24,8 +25,8 @@ class App extends Controller
     @content.height window_height - ( header_height + footer_height )
     @view.height window_height - ( header_height + footer_height )
 
-  show_loader: ->
-    console.log 'show_loader'
+  show_loader: =>
+    @loader.fadeIn 'fast'
 
-  hide_loader: ->
-    console.log 'hide_loader'
+  hide_loader: =>
+    @loader.fadeOut 'fast'
