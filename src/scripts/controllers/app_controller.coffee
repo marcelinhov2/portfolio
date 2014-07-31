@@ -5,8 +5,9 @@ class App extends Controller
 
     do @set_triggers
 
-    @$rootScope.$on 'show_loader', @show_loader
-    @$rootScope.$on 'hide_loader', @hide_loader
+    @$scope.$on 'show_loader', @show_loader
+    @$scope.$on 'hide_loader', (event, callback) => 
+      @hide_loader callback
 
   cache_DOM_elements: ->
     @window = $(window)
@@ -28,5 +29,6 @@ class App extends Controller
   show_loader: =>
     @loader.fadeIn 'fast'
 
-  hide_loader: =>
-    @loader.fadeOut 'slow'
+  hide_loader: (callback) =>
+    @loader.fadeOut 'slow', ->
+      do callback if callback
