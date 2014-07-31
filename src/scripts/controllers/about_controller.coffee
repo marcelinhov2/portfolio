@@ -1,5 +1,5 @@
 class About extends Controller
-  constructor: (@$scope, @$rootScope, @$element, @facebookPageService) ->
+  constructor: (@$scope, @$rootScope, @facebookPageService) ->
     @$rootScope.$broadcast 'show_loader'
     do @cache_DOM_elements
     do @get_facebook_data
