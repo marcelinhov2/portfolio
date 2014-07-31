@@ -1,9 +1,10 @@
-#projects
-  ul
-    li(ng-repeat="post in facebook_posts")
-      a(href="{{post.link}}" target="_blank" style="background-image:url({{post.picture}})")
-        .bg
-          .text
-            span
-              h3 {{post.name}}
-              p  {{post.message}}
+projects-directive
+  #projects
+    ul
+      li(ng-repeat="post in facebook_posts")
+        a(href="{{post.link}}" target="_blank" style="background-image:url({{post.picture}})")
+          .bg
+            .text
+              span
+                h3 {{post.name}}
+                p  {{post.message}}

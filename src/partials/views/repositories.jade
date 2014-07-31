@@ -1,7 +1,8 @@
-#repositories
-  ul
-    li(ng-repeat="repository in repositories")
-      .github-box
-        .github-box-header
-          h3
-            a(href="http://github.com/{{repository.full_name}}", target="_blank") {{repository.name}}
+repositories-directive
+  #repositories
+    ul
+      li(ng-repeat="repository in repositories")
+        .github-box
+          .github-box-header
+            h3
+              a(href="http://github.com/{{repository.full_name}}", target="_blank") {{repository.name}}

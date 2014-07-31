@@ -1,5 +1,5 @@
 class Projects extends Controller
-  constructor: (@$scope, @$rootScope, @facebookPageService) ->
+  constructor: (@$scope, @$rootScope, @$element, @facebookPageService) ->
     @$rootScope.$broadcast 'show_loader'
     do @get_facebook_data
       

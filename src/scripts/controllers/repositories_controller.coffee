@@ -1,5 +1,5 @@
 class Repositories extends Controller
-  constructor: (@$scope, @$rootScope, @githubService) ->
+  constructor: (@$scope, @$rootScope, @$element, @githubService) ->
     @$rootScope.$broadcast 'show_loader'
     do @get_github_data
 
