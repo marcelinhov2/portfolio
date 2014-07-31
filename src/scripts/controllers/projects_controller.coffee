@@ -1,13 +1,8 @@
 class Projects extends Controller
   constructor: (@$scope, @$rootScope, @$element, @facebookPageService) ->
     @$rootScope.$broadcast 'show_loader'
-
-    do @cache_DOM_elements
     do @get_facebook_data
 
-  cache_DOM_elements: ->
-    @container = @$element.find '#projects'
-      
   get_facebook_data: ->
     @facebookPageService.get_projects().success (response) =>
       _.forEach response.data, (post) ->
@@ -15,7 +10,4 @@ class Projects extends Controller
         post.picture = post.picture.replace 'h=154', 'h=265'
 
       @$scope.facebook_posts = response.data
-      @$rootScope.$broadcast 'hide_loader', @in
-
-  in: =>
-    @container.fadeIn 'fast'
+      @$rootScope.$broadcast 'hide_loader'
