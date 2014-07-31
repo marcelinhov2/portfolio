@@ -12,7 +12,7 @@ class App extends Controller
     @window = $(window)
     @content = @$element.find '#content'
     @view = @content.find '#ng_view'
-    @loader = @content.find '#loader'
+    @loader = @$element.find '#loader'
 
   set_triggers: ->
     @window.resize @adjust_layout

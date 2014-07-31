@@ -1,6 +1,11 @@
 #repositories
   ul
     li(ng-repeat="repository in repositories")
-      a(href="http://github.com/{{repository.full_name}}" target="_blank")
-        h3 {{repository.name}}
-        p {{repository.description}}
+      .github-box
+        .github-box-header
+          h3
+            a(href="http://github.com/{{repository.full_name}}") {{repository.name}}
+
+      //- a(href="http://github.com/{{repository.full_name}}" target="_blank")
+      //-   h3 {{repository.name}}
+      //-   p {{repository.description}}

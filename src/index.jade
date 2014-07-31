@@ -8,11 +8,12 @@ html(lang="en")
     // endinject 
   body(ng-app="app" app-directive)
     #wrap
+      #loader 
+        p Loading...
+        
       header-directive
       #content
-        #loader 
-          p Loading...
-        ng-view(id="ng_view" class="at-view-fade-in at-view-fade-out")
+        ng-view(id="ng_view")
       footer-directive
 
     // inject:js 
