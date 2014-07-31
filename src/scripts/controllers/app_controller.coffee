@@ -29,4 +29,4 @@ class App extends Controller
     @loader.fadeIn 'fast'
 
   hide_loader: =>
-    @loader.fadeOut 'fast'
+    @loader.fadeOut 'slow'

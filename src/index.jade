@@ -6,13 +6,13 @@ html(lang="en")
     title Portfólio Marcelo Andrade
     // inject:css 
     // endinject 
-  body(ng-app="app" ng-controller="appController")
+  body(ng-app="app" app-directive)
     #wrap
       header-directive
       #content
         #loader 
           p Loading...
-        ng-view(id="ng_view" class="at-view-flip-in-horizontal at-view-flip-out-horizontal")
+        ng-view(id="ng_view" class="at-view-fade-in at-view-fade-out")
       footer-directive
 
     // inject:js 

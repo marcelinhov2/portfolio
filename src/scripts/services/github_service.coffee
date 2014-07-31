@@ -5,5 +5,4 @@ class Github extends Service
     @$http(
       method: "GET"
       url: "https://api.github.com/users/marcelinhov2/repos"
-      cache: true
     )
