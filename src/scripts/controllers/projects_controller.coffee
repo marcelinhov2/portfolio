@@ -1,6 +1,6 @@
 class Projects extends Controller
   constructor: (@$scope, @$rootScope, @$element, @facebookPageService) ->
-    @$rootScope.$broadcast 'show_loader'
+    @$rootScope.loading = true
     do @get_facebook_data
 
   get_facebook_data: ->
@@ -10,4 +10,4 @@ class Projects extends Controller
         post.picture = post.picture.replace 'h=154', 'h=265'
 
       @$scope.facebook_posts = response.data
-      @$rootScope.$broadcast 'hide_loader'
+      @$rootScope.loading = false
