@@ -3,9 +3,21 @@
 body
   background #000
 
+.fadeIn
+  transition .3s ease-in-out opacity
+  opacity 1
+  overflow hidden
+  height auto
+
+  &.hidden 
+    opacity 0 
+    height 0
+    overflow hidden
+
 a
   padding-bottom 5px
   border-bottom 1px solid transparent
+  outline none
   &:hover, &.active
     color #5b007a !important
     border-bottom 1px solid #5b007a
@@ -108,6 +120,7 @@ a
 #repositories
   max-width 1280px
   margin 0 auto
+  text-align center
   ul
     text-align center
     li
@@ -140,6 +153,7 @@ a
 #projects
   max-width 1280px
   margin 0 auto
+  text-align center
   ul
     display block
     text-align center
