@@ -8,8 +8,6 @@ class App extends Controller
   cache_DOM_elements: ->
     @window = $(window)
     @content = @$element.find '#content'
-    @view = @content.find '#ng_view'
-    @loader = @$element.find '#loader'
 
   set_triggers: ->
     @window.resize @adjust_layout
@@ -20,4 +18,3 @@ class App extends Controller
     footer_height = 60
 
     @content.height window_height - ( header_height + footer_height )
-    @view.height window_height - ( header_height + footer_height )

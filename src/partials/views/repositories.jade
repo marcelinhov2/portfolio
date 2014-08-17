@@ -1,5 +1,5 @@
 repositories-directive
-  #repositories.container
+  #repositories.container(class="fadeIn", ng-class="{ hidden: loading }", ng-cloak)
     ul
       li(ng-repeat="repository in repositories")
         .github-box

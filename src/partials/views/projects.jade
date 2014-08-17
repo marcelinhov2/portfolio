@@ -1,5 +1,5 @@
 projects-directive
-  #projects.container
+  #projects.container(class="fadeIn", ng-class="{ hidden: loading }", ng-cloak)
     ul
       li(ng-repeat="post in facebook_posts")
         a(href="{{post.link}}" target="_blank" style="background-image:url({{post.picture}})")

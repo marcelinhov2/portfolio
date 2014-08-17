@@ -3,6 +3,9 @@
 body
   background #000
 
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak
+  display: none !important;
+
 .fadeIn
   transition .3s ease-in-out opacity
   opacity 1
@@ -22,8 +25,12 @@ a
     color #5b007a !important
     border-bottom 1px solid #5b007a
 
-.centralize
-  margin 0 auto
+
+.container
+  position relative
+  top 0
+  left 0
+  width 100%
 
 #loader
   position absolute
@@ -32,7 +39,7 @@ a
   width 100%
   height 100%
   background #000
-  z-index 9
+
   p
     position absolute
     top 50%
@@ -48,15 +55,13 @@ a
 #content
   position relative
   overflow hidden
-  display table
+  display block
   margin 0 auto
 
   ng-view
     position relative
     width 100%
     height 100%
-    display table-cell
-    vertical-align middle
     overflow auto
     z-index 0
 
@@ -92,141 +97,159 @@ a
         color #a6c53c
         text-decoration none
 
-#about
+about-directive
+  display table
+  position relative
   max-width 1280px
   margin 0 auto
   text-align center
-  h2
-    background:url("/images/logo.jpg") no-repeat top center
-    width 100%
-    height 91px
-    text-indent -9999px
+  height inherit
+  #about
+    display:table-cell;
+    vertical-align: middle;
+    h2
+      background:url("/images/logo.jpg") no-repeat top center
+      width 100%
+      height 91px
+      text-indent -9999px
 
-  p
-    margin-top 25px
-    font-family 'Oswald', sans-serif
-    font-weight 300
-    letter-spacing 1px
-    font-size 16px
-    line-height 22px
-    color #b3b3b3
-
-    a
+    p
       margin-top 25px
-      display block
-      color #a6c53c
-      font-weight 400
+      font-family 'Oswald', sans-serif
+      font-weight 300
+      letter-spacing 1px
+      font-size 16px
+      line-height 22px
+      color #b3b3b3
 
-#repositories
-  max-width 1280px
-  margin 0 auto
-  text-align center
-  ul
-    text-align center
-    li
-      display inline-block
-      margin 10px
-      .github-box
-        background none repeat scroll 0 0 #fafafa
-        border 1px solid #ddd
-        border-radius 5px
-        width 100%
-        a
-          border medium none
-          color #4183c4
-        .github-box-header
-          background linear-gradient(#fcfcfc, #ebebeb) repeat scroll 0 0 rgba(0, 0, 0, 0)
-          border-bottom 1px solid #ddd
-          border-radius 5px 5px 0 0
-          position relative
-          h3
-            color gray
-            font-family 'Oswald', sans-serif
-            font-weight 400
-            font-size 16px
-            padding 10px
-            text-align center
-            a
-              color #4183c4
-              text-decoration none
-
-#projects
-  max-width 1280px
-  margin 0 auto
-  text-align center
-  ul
-    display block
-    text-align center
-    li
-      margin 10px
-      overflow hidden
-      display inline-block
-      vertical-align top
       a
-        color #5b007a
-        width 300px
-        height 199px
-        position relative
+        margin-top 25px
         display block
-        text-decoration none
-        background-position center center
-        background-repeat no-repeat
-        background-size 300px 199px
-        transition: background 1s ease-out;
-        border-bottom 0px
+        color #a6c53c
+        font-weight 400
 
-        .bg
-          overfow hidden
-          position absolute
-          top 0
-          left 0
-          background rgba(0,0,0,.5)
+repositories-directive
+  display table
+  position relative
+  max-width 1280px
+  margin 0 auto
+  text-align center
+  height inherit
+  #repositories
+    display:table-cell;
+    vertical-align: middle;
+    ul
+      text-align center
+      li
+        display inline-block
+        margin 10px
+        .github-box
+          background none repeat scroll 0 0 #fafafa
+          border 1px solid #ddd
+          border-radius 5px
           width 100%
-          height 100%
-          transition: background .5s ease-out;
+          a
+            border medium none
+            color #4183c4
+          .github-box-header
+            background linear-gradient(#fcfcfc, #ebebeb) repeat scroll 0 0 rgba(0, 0, 0, 0)
+            border-bottom 1px solid #ddd
+            border-radius 5px 5px 0 0
+            position relative
+            h3
+              color gray
+              font-family 'Oswald', sans-serif
+              font-weight 400
+              font-size 16px
+              padding 10px
+              text-align center
+              a
+                color #4183c4
+                text-decoration none
 
-          .text
-            display table
-            position absolute
-            top 0
-            left -100%
-            width 100%
-            height 100%
-            padding 0 20px
-            transition: left .4s ease-out
-            -webkit-box-sizing border-box
-            -moz-box-sizing border-box
-            box-sizing border-box
-            
-            span
-              display table-cell
-              vertical-align middle
-
-              h3
-                font-family 'Oswald', sans-serif
-                font-weight 300
-                letter-spacing 1px
-                font-size 16px
-                line-height 22px
-                color #a6c53c
-                margin-bottom 5px
-
-              p
-                font-family 'Oswald', sans-serif
-                font-weight 300
-                letter-spacing 1px
-                font-size 14px
-                line-height 20px
-                color #e6e6e6
-
-        &:hover
-          background-size 350px 232px
+projects-directive
+  display table
+  position relative
+  max-width 1280px
+  margin 0 auto
+  text-align center
+  height inherit
+  #projects
+    display:table-cell;
+    vertical-align: middle;
+    ul
+      display block
+      text-align center
+      li
+        margin 10px
+        overflow hidden
+        display inline-block
+        vertical-align top
+        a
+          color #5b007a
+          width 300px
+          height 199px
+          position relative
+          display block
+          text-decoration none
+          background-position center center
+          background-repeat no-repeat
+          background-size 300px 199px
+          transition: background 5s ease-out;
+          border-bottom 0px
 
           .bg
-            background rgba(0,0,0,.8)
+            overfow hidden
+            position absolute
+            top 0
+            left 0
+            background rgba(0,0,0,.5)
+            width 100%
+            height 100%
+            transition: background .5s ease-out;
 
             .text
-              left 0
+              display table
+              position absolute
+              top 0
+              left -100%
+              width 100%
+              height 100%
+              padding 0 20px
+              transition: left .3s ease-out
+              -webkit-box-sizing border-box
+              -moz-box-sizing border-box
+              box-sizing border-box
+              
+              span
+                display table-cell
+                vertical-align middle
+
+                h3
+                  font-family 'Oswald', sans-serif
+                  font-weight 300
+                  letter-spacing 1px
+                  font-size 16px
+                  line-height 22px
+                  color #a6c53c
+                  margin-bottom 5px
+
+                p
+                  font-family 'Oswald', sans-serif
+                  font-weight 300
+                  letter-spacing 1px
+                  font-size 14px
+                  line-height 20px
+                  color #e6e6e6
+
+          &:hover
+            background-size 350px 232px
+
+            .bg
+              background rgba(0,0,0,.8)
+
+              .text
+                left 0
 
 #footer
   position relative
