@@ -2,7 +2,7 @@ projects-directive
   #projects.container(class="fadeIn", ng-class="{ hidden: loading }", ng-cloak)
     ul
       li(ng-repeat="post in facebook_posts")
-        a(href="{{post.link}}" target="_blank" style="background-image:url({{post.picture}})")
+        a(href="{{post.link}}" target="_blank" class="fadeIn" ng-class="{'animated': post.picture_loaded }" style="background-image:url({{post.picture_loaded}})")
           .bg
             .text
               span

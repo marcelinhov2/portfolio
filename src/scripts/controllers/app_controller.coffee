@@ -14,7 +14,7 @@ class App extends Controller
 
   adjust_layout: =>
     window_height = @window.height()
-    header_height = 57
-    footer_height = 60
+    header_height = 67
+    footer_height = 80
 
     @content.height window_height - ( header_height + footer_height )
